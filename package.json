@@ -1,0 +1,25 @@
+{
+  "name": "applitools-holiday-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@applitools/eyes-cypress": "^3.15.5",
+    "cypress": "^5.6.0"
+  },
+  "scripts": {
+    "e2e": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkonkolowicz/applitools-holiday-hackathon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkonkolowicz/applitools-holiday-hackathon/issues"
+  },
+  "homepage": "https://github.com/mkonkolowicz/applitools-holiday-hackathon#readme"
+}
