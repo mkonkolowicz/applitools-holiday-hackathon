@@ -1,14 +1,16 @@
 describe("Main Page", () => {
+    beforeEach(() => {
+      cy.visit("/tlcHackathonMasterV1.html");
+    })
     it("main page",() => {
-        cy.visit("/tlcHackathonMasterV1.html");
-        cy.eyesOpen({
-            appName: 'AppliFashion',
-            testName: 'Test 1',
-          });
-        cy.eyesCheckWindow('main page');
-        cy.eyesClose();
+      cy.eyesOpen({
+        appName: 'AppliFashion',
+        testName: 'Test 1',
+      });
+      cy.eyesCheckWindow('main page');
+      cy.eyesClose();
     });
-    it("filter by color", () =>{
+    it.only("filter by color", () =>{
         cy.get('#SPAN__checkmark__107').click();
         cy.get('#filterBtn').click();
         cy.eyesOpen({
@@ -17,7 +19,7 @@ describe("Main Page", () => {
           });
           cy.eyesCheckWindow({
             target: 'region',
-            selector: 'id=product_grid'
+            selector: '#product_grid'
           });
         cy.eyesClose();
     });
