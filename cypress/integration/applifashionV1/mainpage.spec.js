@@ -1,35 +1,43 @@
+
+const {makeVisualGridClient} = require('applitools/visual-grid-client');
+
+const visualGridClient = makeVisualGridClient()
+
 describe("Main Page", () => {
     beforeEach(() => {
-      cy.visit("/tlcHackathonMasterV1.html");
+      cy.visit("/tlcHackathonMasterV2.html");
     })
     it("main page",() => {
-      cy.eyesOpen({
+      visualGridClient.openEyes({
         appName: 'AppliFashion',
         testName: 'Test 1',
+        browser: [{ deviceName: 'iPhone X' }, { width: 320, height: 480 }],
       });
-      cy.eyesCheckWindow('main page');
-      cy.eyesClose();
+      visualGridClient.CheckWindow('main page');
+      visualGridClient.Close();
     });
-    it.only("filter by color", () =>{
+    it("filter by color", () =>{
         cy.get('#SPAN__checkmark__107').click();
         cy.get('#filterBtn').click();
-        cy.eyesOpen({
+        visualGridClient.openEyes({
             appName: 'AppliFashion',
             testName: 'Test 2',
+            browser: [{ deviceName: 'iPhone X' }, { width: 320, height: 480 }],
           });
-          cy.eyesCheckWindow({
+          visualGridClient.CheckWindow({
             target: 'region',
             selector: '#product_grid'
           });
-        cy.eyesClose();
+          visualGridClient.Close();
     });
     it("product details", () =>{
         cy.get('#IMG__imgfluid__215').click();
-        cy.eyesOpen({
+        visualGridClient.openEyes({
             appName: 'AppliFashion',
-            testName: 'Test 3',
+            testName: 'Test 3',            
+            browser: [{ deviceName: 'iPhone X' }, { width: 320, height: 480 }],
           });
-          cy.eyesCheckWindow();
-        cy.eyesClose();
+          visualGridClient.CheckWindow();
+        visualGridClient.Close();
     });
 });
