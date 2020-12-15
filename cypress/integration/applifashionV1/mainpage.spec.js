@@ -1,6 +1,6 @@
 describe("Main Page", () => {
     beforeEach(() => {
-      cy.visit("/tlcHackathonMasterV1.html");
+      cy.visit("/tlcHackathonMasterV2.html");
     })
     it("main page",() => {
       cy.eyesOpen({
@@ -10,7 +10,7 @@ describe("Main Page", () => {
       cy.eyesCheckWindow('main page');
       cy.eyesClose();
     });
-    it.only("filter by color", () =>{
+    it("filter by color", () =>{
         cy.get('#SPAN__checkmark__107').click();
         cy.get('#filterBtn').click();
         cy.eyesOpen({
